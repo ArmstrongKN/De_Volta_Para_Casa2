@@ -15,6 +15,7 @@
   <option value="1"> Atração </option>
   <option value="2"> Empregabilidade </option>
   <option value="3"> Imobiliária </option>
+  <option value="4"> Educação </option>
 </select>
 <div class="mb-3">
   <label for="formFile" class="form-label"> Imagem </label>

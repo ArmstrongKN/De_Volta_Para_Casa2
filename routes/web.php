@@ -6,6 +6,7 @@ use App\Http\Controllers\AtracoesController;
 use App\Http\Controllers\EmpregabilidadeController;
 use App\Http\Controllers\ImobiliariaController;
 use App\Http\Controllers\AdministracaoController;
+use App\Http\Controllers\EducacaoController;
 
 
 
@@ -24,6 +25,9 @@ Route::get("/empregabilidade", [EmpregabilidadeController::class, "mostrarEmpreg
 
 //imobiliaria
 Route::get("/imobiliaria", [ImobiliariaController::class, "mostrarImobiliaria"])->name("mostrarImobiliaria");
+
+// Educação
+Route::get("/educacao", [EducacaoController::class, "mostrarEducacao"])->name("mostrarEducacao");
 
 // Administração
 Route::get("/administracao", [AdministracaoController::class, "mostrarAdministracao"])->name("mostrarAdministracao");
