@@ -1,4 +1,4 @@
-@extends('layout')
+@extends('dashboard')
 @section('imobiliaria')
 
     <div class="container">
@@ -90,5 +90,15 @@
         </div>
     </div>
 
+    @foreach ($listaImobiliaria as $imobiliaria)
+    <div class="card" style="width: 18rem;">
+        <img src="{{ $imobiliaria->imagem }}" class="card-img-top">
+        <div class="card-body">
+            <h5 class="card-title"> {{ $imobiliaria->titulo }} </h5>
+            <p class="card-text"> {{ $imobiliaria->descricao }} </p>
+            <a href="{{ $imobiliaria->url }}" class="btn btn-primary">Conferir</a>
+        </div>
+    </div>
+    @endforeach
 </div>
 @endsection

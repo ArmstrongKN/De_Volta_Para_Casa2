@@ -1,4 +1,4 @@
-@extends("layout")
+@extends("dashboard")
 @section("atracoes")
 
 <div class="container">
@@ -89,5 +89,15 @@
         </div>
     </div>
 
+    @foreach ($listaAtracoes as $atracao)
+    <div class="card" style="width: 18rem;">
+        <img src="{{ $atracao->imagem }}" class="card-img-top">
+        <div class="card-body">
+            <h5 class="card-title"> {{ $atracao->titulo }} </h5>
+            <p class="card-text"> {{ $atracao->descricao }} </p>
+            <a href="{{ $atracao->url }}" class="btn btn-primary">Conferir</a>
+        </div>
+    </div>
+    @endforeach
 </div>
 @endsection

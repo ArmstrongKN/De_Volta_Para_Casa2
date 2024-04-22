@@ -36,14 +36,17 @@
               </a>
            </li>
 
-
-           <!-- Somente o usuário com a condição true ou 1 no banco de dados na tabela de permissão
+           <li class="nav-item dropdown">
+              <a class="nav-link" href="{{'/educacao'}}" role="button" aria-expanded="false">
+                Educação
+              </a>
+           </li>
             
            <li class="nav-item dropdown">
-              <a class="nav-link"  href="{{'/imobiliaria'}}" role="button"aria-expanded="false">
-                Administracao
+              <a class="nav-link"  href="{{'/administracao'}}" role="button"aria-expanded="false">
+                Administração
               </a>
-           </li> -->
+           </li>
       </ul>
     </div>
    
@@ -54,6 +57,7 @@
     </header>
     <main>
         @yield('content')
+        @yield('index')
         @yield('atracoes')
         @yield('empregabilidade')
         @yield('imobiliaria')

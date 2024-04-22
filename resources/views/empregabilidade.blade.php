@@ -1,4 +1,4 @@
-@extends('layout')
+@extends('dashboard')
 @section('empregabilidade')
 <div class="conteudo">
     <div class="card" style="width: 18rem;">
@@ -76,5 +76,15 @@
         </div>
     </div>
 
+    @foreach ($listaEmpregabilidade as $empregabilidade)
+    <div class="card" style="width: 18rem;">
+        <img src="{{ $empregabilidade->imagem }}" class="card-img-top">
+        <div class="card-body">
+            <h5 class="card-title"> {{ $empregabilidade->titulo }} </h5>
+            <p class="card-text"> {{ $empregabilidade->descricao }} </p>
+            <a href="{{ $empregabilidade->url }}" class="btn btn-primary">Conferir</a>
+        </div>
+    </div>
+    @endforeach
 </div>
 @endsection

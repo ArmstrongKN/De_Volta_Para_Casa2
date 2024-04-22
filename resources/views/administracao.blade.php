@@ -1,25 +1,33 @@
-@extends("layout")
+@extends("dashboard")
 @section("administracao")
 
+<form action="{{route('postarItem')}}" method="post">
+  @csrf
 <div class="mb-3">
-  <label for="exampleFormControlInput1" class="form-label">Título da Notícia</label>
-  <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Título da Notícia">
+  <label for="exampleFormControlInput1" class="form-label">Título do item</label>
+  <input type="text" class="form-control" name="titulo" placeholder="Título do item">
 </div>
 <div class="mb-3">
-  <label for="exampleFormControlTextarea1" class="form-label">Descrição da Notícia</label>
-  <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="Descrição da Notícia"></textarea>
+  <label for="exampleFormControlTextarea1" class="form-label">Descrição do item</label>
+  <textarea class="form-control" name="descricao" rows="3" placeholder="Descrição do item"></textarea>
 </div>
 
-<select class="form-select" aria-label="Default select example">
+<select class="form-select" name="area" aria-label="Default select example">
   <option selected> Qual área</option>
-  <option value="1"> Atração </option>
-  <option value="2"> Empregabilidade </option>
-  <option value="3"> Imobiliária </option>
-  <option value="4"> Educação </option>
+  <option value="Atração"> Atração </option>
+  <option value="Empregabilidade"> Empregabilidade </option>
+  <option value="Imobiliária"> Imobiliária </option>
+  <option value="Educação"> Educação </option>
 </select>
 <div class="mb-3">
   <label for="formFile" class="form-label"> Imagem </label>
-  <input class="form-control" type="file" id="formFile">
+  <input class="form-control" name="imagem" type="file">
 </div>
- 
+
+<div class="mb-3">
+  <label for="exampleFormControlTextarea1" class="form-label">Link do item</label>
+  <textarea class="form-control" name="url" placeholder="Link do item"></textarea>
+</div>
+<button type="submit" class="btn btn-primary">Postar item</button>
+</form>
 @endsection

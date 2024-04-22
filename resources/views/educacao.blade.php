@@ -1,4 +1,4 @@
-@extends('layout')
+@extends('dashboard')
 @section('educacao')
 <div class="conteudo">
 
@@ -79,5 +79,15 @@ Em agosto de 2020, a Seduc-SP avaliou a percepção de 13 mil professores e 121 
     </div>
   </div>
 
+  @foreach ($listaEducacao as $educacao)
+    <div class="card" style="width: 18rem;">
+        <img src="{{ $educacao->imagem }}" class="card-img-top">
+        <div class="card-body">
+            <h5 class="card-title"> {{ $educacao->titulo }} </h5>
+            <p class="card-text"> {{ $educacao->descricao }} </p>
+            <a href="{{ $educacao->url }}" class="btn btn-primary">Conferir</a>
+        </div>
+    </div>
+    @endforeach
  
 @endsection
