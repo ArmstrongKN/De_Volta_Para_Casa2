@@ -1,4 +1,5 @@
-@extends('dashboard')
+@extends("home")
+@extends("dashboard")
 @section('imobiliaria')
 
     <div class="container">

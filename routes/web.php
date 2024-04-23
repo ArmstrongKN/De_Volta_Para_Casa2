@@ -10,9 +10,25 @@ use App\Http\Controllers\AdministracaoController;
 use App\Http\Controllers\EducacaoController;
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('home');
 });
 
+
+ // Atracoes
+ Route::get("/atracoes", [AtracoesController::class, "mostrarAtracoes"])->name("mostrarAtracoes");
+ Route::get("/atracoes", [AtracoesController::class, "listarAtracoes"])->name("listarAtracoes");
+
+ //empregabilidade
+ Route::get("/empregabilidade", [EmpregabilidadeController::class, "mostrarEmpregabilidade"])->name("mostrarEmpregabilidade");
+ Route::get("/empregabilidade", [EmpregabilidadeController::class, "listarEmpregabilidade"])->name("listarEmpregabilidade");
+ //imobiliaria
+ Route::get("/imobiliaria", [ImobiliariaController::class, "mostrarImobiliaria"])->name("mostrarImobiliaria");
+ Route::get("/imobiliaria", [ImobiliariaController::class, "listarImobiliaria"])->name("listarImobiliaria");
+
+ // Educação
+ Route::get("/educacao", [EducacaoController::class, "mostrarEducacao"])->name("mostrarEducacao");
+ Route::get("/educacao", [EducacaoController::class, "listarEducacao"])->name("listarEducacao");
+     
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
@@ -23,24 +39,10 @@ Route::middleware('auth')->group(function () {
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 
-        // Home
+    // Home
     Route::get("/index", [PrincipalController::class, "mostrarPrincipal"])->name("mostrarHome");
 
-    // Atracoes
-    Route::get("/atracoes", [AtracoesController::class, "mostrarAtracoes"])->name("mostrarAtracoes");
-    Route::get("/atracoes", [AtracoesController::class, "listarAtracoes"])->name("listarAtracoes");
-
-    //empregabilidade
-    Route::get("/empregabilidade", [EmpregabilidadeController::class, "mostrarEmpregabilidade"])->name("mostrarEmpregabilidade");
-    Route::get("/empregabilidade", [EmpregabilidadeController::class, "listarEmpregabilidade"])->name("listarEmpregabilidade");
-    //imobiliaria
-    Route::get("/imobiliaria", [ImobiliariaController::class, "mostrarImobiliaria"])->name("mostrarImobiliaria");
-    Route::get("/imobiliaria", [ImobiliariaController::class, "listarImobiliaria"])->name("listarImobiliaria");
-
-    // Educação
-    Route::get("/educacao", [EducacaoController::class, "mostrarEducacao"])->name("mostrarEducacao");
-    Route::get("/educacao", [EducacaoController::class, "listarEducacao"])->name("listarEducacao");
-
+   
     // Administração
     Route::get("/administracao", [AdministracaoController::class, "mostrarAdministracao"])->name("mostrarAdministracao");
     Route::post("/administracao", [AdministracaoController::class, "postarItem"])->name("postarItem");

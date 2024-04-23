@@ -1,3 +1,4 @@
+@extends("home")
 @extends("dashboard")
 @section("index")
 

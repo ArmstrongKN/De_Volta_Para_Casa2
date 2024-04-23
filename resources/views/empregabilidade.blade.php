@@ -1,4 +1,6 @@
-@extends('dashboard')
+@extends("home")
+@extends("dashboard")
+
 @section('empregabilidade')
 <div class="conteudo">
     <div class="card" style="width: 18rem;">

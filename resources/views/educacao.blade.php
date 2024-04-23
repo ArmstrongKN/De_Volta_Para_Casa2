@@ -1,4 +1,5 @@
-@extends('dashboard')
+@extends("home")
+@extends("dashboard")
 @section('educacao')
 <div class="conteudo">
 
