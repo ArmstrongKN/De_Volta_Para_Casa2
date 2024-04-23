@@ -10,9 +10,11 @@
 <body>
 <x-app-layout>
     <x-slot name="header">
+        <div class="text-danger">
+        <h3>Clique nas navegações para acessar o conteúdo</h3>
+
         <h2 class="font-semibold text-xl text-gray-800 leading-tight">
 
-            <h3>Clique nas navegações para acessar o conteúdo</h3>
 
             <a class="nav-link active" aria-current="page" href="{{'/index'}}"> Home </a>
 
